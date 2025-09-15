@@ -1,5 +1,11 @@
 import streamlit as st
 
+from ui import render_footer, render_field
+from static import FEATURES, DEFAULT_PROFILE, ORDER
+
+if "patient" not in st.session_state:
+    st.session_state["patient"] = DEFAULT_PROFILE.copy()
+
 st.title("🩺 Simulatore Paziente")
 st.write(
     """
@@ -12,3 +18,8 @@ st.write(
     
     """
 )
+
+from ui import render_footer
+render_footer("Alessia Gingillo","https://github.com/alessiagingillo")
+
+
